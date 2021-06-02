@@ -9,6 +9,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import Card from "@material-ui/core/Card";
 
 const QuestionCard = ({onClickNext, error, currentValue, handleRadioChange, helperText, data, activeQuestion, totalNumberOfQuestions}) => <Card>
+    {data &&
     <CardContent>
         <Typography color="textSecondary" gutterBottom>
             QUESTION {activeQuestion} OF {totalNumberOfQuestions}
@@ -26,12 +27,13 @@ const QuestionCard = ({onClickNext, error, currentValue, handleRadioChange, help
                     })}
                 </RadioGroup>
                 <FormHelperText>{helperText}</FormHelperText>
-                <Button type="submit" variant="outlined" color="primary" className='margin-top-20'>
+                <Button type="submit" variant="outlined" color="primary" className='margin-top-20' data-testid="next-button" id="next-button">
                     {(activeQuestion < totalNumberOfQuestions) ? 'Next' : 'Finish'}
                 </Button>
             </FormControl>
         </form>
     </CardContent>
+    }
 </Card>
 
 export default QuestionCard;

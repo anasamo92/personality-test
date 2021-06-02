@@ -4,6 +4,7 @@ import Card from "@material-ui/core/Card";
 
 const QuestionCard = ({data}) =>
     <Card>
+        {data &&
         <Grid container>
             <Grid item xs={3}/>
             <Grid item xs={6} className='margin-top-100 margin-bottom-100'>
@@ -21,6 +22,7 @@ const QuestionCard = ({data}) =>
             </Grid>
             <Grid item xs={3}/>
         </Grid>
+        }
     </Card>
 
 export default QuestionCard;
